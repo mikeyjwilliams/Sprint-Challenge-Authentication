@@ -4,6 +4,7 @@ const router = require('express').Router();
 const authModel = require('./auth-model');
 const bcrypt = require('bcryptjs');
 const secret = require('../Secret/secret');
+const jwt = require('jsonwebtoken');
 
 router.post('/register', async (req, res) => {
   try {
@@ -45,9 +46,11 @@ router.post('/login', async (req, res) => {
 
     const payload = {
       userId: user.id,
+      username: user.username,
     };
     const token = jwt.sign(payload, secret.jwtSecret);
-    res.cookie = token;
+
+    res.cookie('token', token);
     res.json({
       message: `Greetings ${user.username}`,
       token: token,
