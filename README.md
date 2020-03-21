@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Sprint Challenge: Authentication - Dad Jokes
 
 ## Description
@@ -38,13 +40,22 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [x] What is the purpose of using _sessions_?
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+- sessions can store specific data for the user in a cookie such as a token or user data specific
+  for the site and the user.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [x] What does bcrypt do to help us store passwords in a secure manner.
 
-- [ ] What are the three parts of the JSON Web Token?
+- it hashes and salts passwords with a time complexity added if wanted.
+
+- [x] What does bcrypt do to slow down attackers?
+
+- it adds a time complexity to the hash.
+
+- [x] What are the three parts of the JSON Web Token?
+
+- header, payload, signature
 
 ## Minimum Viable Product
 
