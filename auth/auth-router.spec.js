@@ -3,7 +3,7 @@
 const supertest = require('supertest');
 const server = require('../api/server');
 
-let user = 'miguel';
+let user = 'sally';
 
 describe('login route', () => {
   describe('login', () => {
@@ -30,12 +30,12 @@ describe('login route', () => {
 });
 
 describe('register route', () => {
-  describe('register fail', () => {
+  describe('register pass', () => {
     test('register /api/auth/login', async () => {
       const res = await supertest(server)
         .post('/api/auth/login')
         .send({ username: 'mikey', password: '123' });
-      expect(res.statusCode).toBe(401);
+      expect(res.statusCode).toBe(200);
       expect(res.type).toBe('application/json');
     });
   });
